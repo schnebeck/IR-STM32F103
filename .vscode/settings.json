@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.linux": {
+        "PATH": "/home/schnebeck/.platformio/penv/bin:/home/schnebeck/.platformio/penv:/home/schnebeck/.local/bin:/home/schnebeck/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/microchip/xc16/v1.36/bin:/opt/microchip/xc16/v1.36/bin:/opt/microchip/xc16/v1.36/bin",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
