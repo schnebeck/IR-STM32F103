@@ -1,6 +1,6 @@
 
 #define LED PB1
-#define KEY_SLEEP PB0
+#define KEY_SLEEP PB12
 #define RASPI_SHUTDOWN PB10
 #define RASPI_OFF PB11
 #define IR_SIGNAL PC15
@@ -20,7 +20,7 @@ uint8_t ir_on_adr = 2;
 uint8_t ir_off_adr = 2 + sizeof(IRMP_DATA);
 
 bool startShutDown = false;
-uint8_t statemachine = 0;
+uint8_t statemachine;
 unsigned long keyPressTime;
 unsigned long now;
 
@@ -28,7 +28,7 @@ LEDMode statusLED(LED, LEDMode::on50Off50);
 
 void setup()
 {
-  delay(100);
+  delay(10000);
   Serial.begin(115200);
   Serial.println("Startup");
   Serial.println("Raspi IR-PowerCtrl V1.0");
@@ -55,6 +55,8 @@ void setup()
   }
   Serial.print(F("Ready to receive IR signals of protocols: "));
   irmp_print_active_protocols(&Serial);
+  statemachine = 0;
+
 }
 
 void loop()
@@ -68,7 +70,7 @@ void loop()
   {
   case 0:
     // Startup
-    Serial.print("Expect ");
+    Serial.print("\nExpect ");
     Serial.print("0xaa55");
     Serial.print(", Read ");
     Serial.print(EEPROM.read(0) + (EEPROM.read(1) << 8), HEX);
