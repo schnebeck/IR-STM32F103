@@ -3,7 +3,7 @@
 Switching your Raspberry PI on and off by key or IR remote control
 ==================================================================
 
-A simple BluePill setup (https://www.amazon.com/CANADUINO-STM32-Original-STM32F103C8T6-Correct/dp/B07RSTMMDL/ ) to control a raspberry pi with an IR remote control
+A simple BluePill setup (https://www.amazon.com/dp/B08THXZ6XK) to control a raspberry pi with an IR remote control
 Setup utilies some pins:
 
 #define RASPI_OFF PB11
